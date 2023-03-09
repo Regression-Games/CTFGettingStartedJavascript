@@ -4,7 +4,7 @@ You now have a bot that can collect the flag and collect items - what's next?
 
 * **Sign up in the Alpha Cup at https://play.regression.gg/events**
 * How can you incorporate [Steamship](https://steamship.com) to give your bot a personality? See their getting started guides [here](https://replit.com/@steamship).
-* Read more about the game mode in our [Game Specification](https://www.notion.so/regressiongg/Capture-the-Flag-Game-Specification-bc72be0f38df427287ec428006d1d299?pvs=4). Learn about
+* Read more about the game mode in our [Game Specification](https://regressiongg.notion.site/Capture-the-Flag-Game-Specification-bc72be0f38df427287ec428006d1d299). Learn about
   our point system, important effects, and more!
 * Visit our [Discord forum](https://discord.gg/925SYVse2H)
   to talk strategy and get help from players.
