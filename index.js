@@ -45,9 +45,7 @@ export function configureBot(bot) {
   })
 
   bot.on('spawn', async () => {
-    if (rgctfUtils.getFlagLocation() !== null) {
-      rgctfUtils.approachFlag();
-    }
+    rgctfUtils.approachFlag();
   });
 
   // When a player obtains the flag, this event gets called.
@@ -55,6 +53,7 @@ export function configureBot(bot) {
   // navigates back to their scoring location.
   bot.on(CTFEvent.FLAG_OBTAINED, async (collector) => {
     if (collector == bot.username()) {
+      console.log("Got the flag")
       // @ts-ignore
       bot.mineflayer().pathfinder.setGoal(null)
       // @ts-ignore
