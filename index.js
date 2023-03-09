@@ -45,7 +45,8 @@ export function configureBot(bot) {
   })
 
   bot.on('spawn', async () => {
-    rgctfUtils.approachFlag();
+    await rgctfUtils.approachFlag();
+    bot.chat("Nah")
   });
 
   // When a player obtains the flag, this event gets called.
