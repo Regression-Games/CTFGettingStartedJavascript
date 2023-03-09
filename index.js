@@ -46,20 +46,13 @@ export function configureBot(bot) {
 
   bot.on('spawn', async () => {
     await rgctfUtils.approachFlag();
-    bot.chat("Nah")
   });
 
   // When a player obtains the flag, this event gets called.
   // In the case where that player is this bot, the bot
   // navigates back to their scoring location.
   bot.on(CTFEvent.FLAG_OBTAINED, async (collector) => {
-    bot.chat("Flag picked up!")
     if (collector == bot.username()) {
-      bot.chat("Got the flag")
-      // @ts-ignore
-      bot.mineflayer().pathfinder.setGoal(null)
-      // @ts-ignore
-      bot.mineflayer().pathfinder.stop()
       await rgctfUtils.scoreFlag()
     }
   });
