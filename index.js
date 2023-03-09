@@ -46,7 +46,7 @@ export function configureBot(bot) {
 
   bot.on('spawn', async () => {
     if (rgctfUtils.getFlagLocation() !== null) {
-      await rgctfUtils.approachFlag();
+      rgctfUtils.approachFlag();
     }
   });
 
@@ -55,6 +55,10 @@ export function configureBot(bot) {
   // navigates back to their scoring location.
   bot.on(CTFEvent.FLAG_OBTAINED, async (collector) => {
     if (collector == bot.username()) {
+      // @ts-ignore
+      bot.mineflayer().pathfinder.setGoal(null)
+      // @ts-ignore
+      bot.mineflayer().pathfinder.stop()
       await rgctfUtils.scoreFlag()
     }
   });
