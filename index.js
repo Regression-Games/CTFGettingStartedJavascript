@@ -45,7 +45,9 @@ export function configureBot(bot) {
   })
 
   bot.on('spawn', async () => {
-    await rgctfUtils.approachFlag();
+    if (rgctfUtils.getFlagLocation() !== null) {
+      await rgctfUtils.approachFlag();
+    }
   });
 
   // When a player obtains the flag, this event gets called.
