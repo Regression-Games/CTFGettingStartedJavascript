@@ -53,8 +53,9 @@ export function configureBot(bot) {
   // In the case where that player is this bot, the bot
   // navigates back to their scoring location.
   bot.on(CTFEvent.FLAG_OBTAINED, async (collector) => {
+    bot.chat("Flag picked up!")
     if (collector == bot.username()) {
-      console.log("Got the flag")
+      bot.chat("Got the flag")
       // @ts-ignore
       bot.mineflayer().pathfinder.setGoal(null)
       // @ts-ignore
